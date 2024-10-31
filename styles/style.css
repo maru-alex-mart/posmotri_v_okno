@@ -29,7 +29,6 @@ html {
   justify-content: center;
   gap: 30px;
   inline-size: 1140px;
-
   margin: 0;
 }
 
@@ -80,7 +79,7 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -93,12 +92,11 @@ ol {
 }
 
 .search-form__label {
-  /* расставить элементы внутри в линию. И при этом подогнать ширину контейнера под размер внутренних элементов */
   display: flex;
   flex-direction: row;
   gap: 5px;
   width: fit-content;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .search-form__checkbox-list {
@@ -109,7 +107,7 @@ ol {
   justify-content: baseline;
 }
 
-.search-form__checkbox-list .search-form__label:has(:focus-visible) {
+.search-form__checkbox-list .search-form__label:has(:not(:active):focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
   cursor: pointer;
@@ -133,8 +131,7 @@ ol {
   background-color: #fff;
 }
 
-.search-form__checkbox:checked.search-form__pseudo-checkbox::after {
-  /* «псевдоэлемент для первого соседа зажатого чекбокса» */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
   min-inline-size: 15px;
   min-block-size: 15px;
@@ -142,8 +139,8 @@ ol {
 }
 
 .search-form__textfield {
-  width: 225px;
-  height: 27px;
+  inline-size: 225px;
+  block-size: 27px;
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -177,8 +174,9 @@ ol {
   cursor: text;
 }
 
-.search-form__label:has(:focus-visible) {
+.search-form__label:has(:not(:active):focus-visible) {
   outline: 1px solid #fff;
+  outline-offset: 2px;
 }
 
 .content__details {
@@ -190,7 +188,7 @@ ol {
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-weight: 700;
   line-height: 70.5px;
@@ -201,7 +199,7 @@ ol {
 }
 
 .content__accent {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-weight: 700;
   line-height: 70.5px;
@@ -237,12 +235,13 @@ ol {
   text-decoration: underline;
 }
 
-.content__card-link:has(:focus-visible) {
+.content__card-link:has(:not(:active):focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
-.content__card-link_current:active {
+.content__card-link_current,
+.content__card-link:active {
   background-color: #545050;
 }
 
@@ -265,7 +264,7 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
@@ -280,7 +279,7 @@ ol {
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 16.2px;
@@ -289,6 +288,10 @@ ol {
 
 .content__video-card-description-container {
   flex-grow: 1;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-bottom: 4px;
+  overflow: hidden;
 }
 
 .visually-hidden {
@@ -305,7 +308,7 @@ ol {
   height: 34px;
   border: 1px solid #fff;
   background-color: transparent;
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 21.6px;
@@ -326,7 +329,7 @@ ol {
   text-decoration: underline;
 }
 
-.search-form__submit-button:has(:focus-visible) {
+.search-form__submit-button:has(:not(:active):focus-visible) {
   outline-offset: 2px;
   outline: 1px solid #fff;
 }
@@ -346,7 +349,7 @@ ol {
   text-decoration: underline;
 }
 
-.more-button:has(:focus-visible) {
+.more-button:has(:not(:active):focus-visible) {
   outline-offset: 2px;
   outline: 1px solid #fff;
 }
