@@ -4,6 +4,25 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
 html {
   block-size: 100%;
 }
@@ -43,26 +62,7 @@ html {
 
 .result__video {
   width: 100%;
-  object-fit: cover;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
+  object-position: center;
 }
 
 .search-form {
@@ -104,7 +104,8 @@ ol {
   display: flex;
   flex-direction: row;
   gap: 15px;
-  justify-content: baseline;
+  align-items: center;
+  /*justify-content: baseline;*/
 }
 
 .search-form__checkbox-list .search-form__label:has(:not(:active):focus-visible) {
@@ -210,16 +211,18 @@ ol {
 .content__list {
   position: relative;
   display: grid;
-  width: 399px;
+  width: 404px;
   height: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
 }
 
-.content__list-item:not(:last-of-type) {
+.content__list-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.content__list-item:not(:last-of-type) {
   margin-bottom: 30px;
 }
 
@@ -235,26 +238,20 @@ ol {
   text-decoration: underline;
 }
 
-.content__card-link:has(:not(:active):focus-visible) {
-  outline: 1px solid #fff;
-  outline-offset: 2px;
-}
-
 .content__card-link_current,
 .content__card-link:active {
   background-color: #545050;
 }
 
-.cards-list-item-template {
-  display: flex;
-  align-items: flex-start;
+.content__card-link:has(:not(:active):focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
 }
 
 .content__video-card-thumbnail {
   width: 198px;
   height: 103px;
-  background: #000;
-  object-fit: fill;
+  object-position: center;
 }
 
 .content__video-card {
@@ -271,11 +268,10 @@ ol {
   text-align: left;
   text-transform: uppercase;
   margin-bottom: 6px;
-}
-
-.content__video-card-title:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 192px;  
 }
 
 .content__video-card-description {
