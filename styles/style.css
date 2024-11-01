@@ -62,7 +62,7 @@ html {
 
 .result__video {
   width: 100%;
-  object-position: center;
+  object-fit: cover;
 }
 
 .search-form {
@@ -73,9 +73,17 @@ html {
   align-items: flex-end;
 }
 
+.search-form:focus {
+  outline: none;
+}
+
 .search-form__fieldset {
   width: 100%;
   border: 0;
+}
+
+.search-form__fieldset:focus {
+  outline: none;
 }
 
 .search-form__fieldset-title {
@@ -99,13 +107,19 @@ html {
   align-items: center;
 }
 
+.search-form__label:focus {
+  outline: none;
+}
+
 .search-form__checkbox-list {
-  /* выстроить чекбоксы в линию */
   display: flex;
   flex-direction: row;
   gap: 15px;
   align-items: center;
-  /*justify-content: baseline;*/
+}
+
+.search-form__checkbox-list:focus {
+  outline: none;
 }
 
 .search-form__checkbox-list .search-form__label:has(:not(:active):focus-visible) {
@@ -128,8 +142,16 @@ html {
   border: 1px solid #fff;
 }
 
+.search-form__pseudo-checkbox:focus {
+  outline: none;
+}
+
 .search-form__pseudo-checkbox:active {
   background-color: #fff;
+}
+
+.search-form__checkbox:focus {
+  outline: none;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
@@ -238,6 +260,10 @@ html {
   text-decoration: underline;
 }
 
+.content__card-link:focus {
+  outline: none;
+}
+
 .content__card-link_current,
 .content__card-link:active {
   background-color: #545050;
@@ -251,13 +277,17 @@ html {
 .content__video-card-thumbnail {
   width: 198px;
   height: 103px;
-  object-position: center;
+  object-fit: cover;
 }
 
 .content__video-card {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+}
+
+.content__video-card:focus {
+  outline: none;
 }
 
 .content__video-card-title {
@@ -287,7 +317,6 @@ html {
   margin-top: 2px;
   margin-left: 2px;
   margin-bottom: 4px;
-  overflow: hidden;
 }
 
 .visually-hidden {
@@ -311,6 +340,10 @@ html {
   text-align: center;
   color: #fff;
   cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .search-form__submit-button {
